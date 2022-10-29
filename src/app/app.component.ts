@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'cpol-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: '<router-outlet></router-outlet>',
 })
-export class AppComponent {
-  title = 'cpol-interview-challenge';
-}
+export class AppComponent {}
