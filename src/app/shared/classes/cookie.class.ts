@@ -1,8 +1,8 @@
-import { REFRESH_TOKEN, TOKEN } from '../constants';
+import { TOKEN } from '../constants';
 
 export class CookieHandler {
-  static setToken(token: string) {
-    this.setCookie(TOKEN, token, 1);
+  static setToken(token: string, expireTime: number = 24) {
+    this.setCookie(TOKEN, token, expireTime);
   }
 
   static getToken(): string {
@@ -13,23 +13,11 @@ export class CookieHandler {
     this._eraseCookie(TOKEN);
   }
 
-  static setRefreshToken(token: string) {
-    this.setCookie(REFRESH_TOKEN, token, 1);
-  }
-
-  static getRefreshToken(): string {
-    return this._getCookie(REFRESH_TOKEN);
-  }
-
-  static removeRefreshToken() {
-    this._eraseCookie(REFRESH_TOKEN);
-  }
-
-  private static setCookie(name: string, value: string, days = 1) {
+  private static setCookie(name: string, value: string, expireTime: number) {
     let expires: string = '';
-    if (days) {
+    if (expireTime) {
       const date: Date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      date.setTime(date.getTime() + expireTime * 60 * 60 * 1000);
       expires = '; expires=' + date.toUTCString();
     }
     document.cookie = name + '=' + (value || '') + expires + '; path=/';
