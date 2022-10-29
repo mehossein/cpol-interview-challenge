@@ -1,6 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+// ngx-toaster Config
 @import url("ngx-toastr/toastr");
 
+// Tailwind css config
 @import url("tailwindcss/base");
 @import url("tailwindcss/components");
 @import url("tailwindcss/utilities");
+
+@import url("./assets/fonts/style.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Vazir;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  border: none;
+  --tw-ring-color: #fff !important;
+}
+
+//scrollbar
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(167, 167, 167);
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.loader {
+  margin: 0 5px;
+  width: 18px;
+  height: 18px;
+  border: 3px solid transparent;
+  border-radius: 100%;
+  border-top-color: rgb(58, 40, 221);
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
