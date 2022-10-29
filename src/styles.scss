@@ -25,13 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-textarea:focus,
-select:focus,
-input:focus {
-  border: none;
-  --tw-ring-color: #fff !important;
-}
-
 //scrollbar
 
 *::-webkit-scrollbar {
@@ -61,7 +54,6 @@ input:focus {
   height: 18px;
   border: 3px solid transparent;
   border-radius: 100%;
-  border-top-color: rgb(58, 40, 221);
   -webkit-animation: spinner 1.5s linear infinite;
   animation: spinner 1.5s linear infinite;
 }
@@ -82,4 +74,8 @@ input:focus {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
 }

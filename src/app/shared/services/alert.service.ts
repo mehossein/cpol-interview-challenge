@@ -6,7 +6,7 @@ export class AlertService {
   constructor(private readonly _toastr: ToastrService) {}
 
   private readonly COMMON_CONFIG: Partial<IndividualConfig> = {
-    positionClass: 'toast-top-right',
+    positionClass: 'toast-bottom-right',
     progressBar: true,
   };
 
