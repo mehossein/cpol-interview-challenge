@@ -1,2 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("ngx-toastr/toastr");
+
+@import url("tailwindcss/base");
+@import url("tailwindcss/components");
+@import url("tailwindcss/utilities");
