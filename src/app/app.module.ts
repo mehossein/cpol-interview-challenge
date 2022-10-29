@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 // Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,9 @@ import { ToastrModule } from 'ngx-toastr';
 
     // Third-Party
     ToastrModule.forRoot(),
+
+    // App
+    CoreModule,
   ],
   bootstrap: [AppComponent],
 })
