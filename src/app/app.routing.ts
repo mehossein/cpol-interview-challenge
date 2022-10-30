@@ -3,20 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // App
-import { AuthGuard } from './authentication/shared/guard';
+import { AuthGuard } from '@app/authentication/shared/guard';
+import { DashboardGuard } from '@app/dashboard/shared/guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'auth',
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./dashboard/dashboard.module').then((module) => {
-        return module.DashboardModule;
-      }),
+    redirectTo: 'dashboard',
   },
   {
     path: 'auth',
@@ -26,7 +20,15 @@ const routes: Routes = [
         return module.AuthenticationModule;
       }),
   },
-  { path: '**', redirectTo: 'auth' },
+  {
+    path: 'dashboard',
+    canActivate: [DashboardGuard],
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((module) => {
+        return module.DashboardModule;
+      }),
+  },
+  { path: '**', redirectTo: 'dashboard' },
 ];
 
 @NgModule({

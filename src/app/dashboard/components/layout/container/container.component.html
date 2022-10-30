@@ -1,0 +1,17 @@
+<div class="w-full h-full flex">
+  <div class="w-2/12 h-full">
+    <cpol-sidebar></cpol-sidebar>
+  </div>
+  <div class="w-10/12 h-full flex flex-col">
+    <div class="w-full h-56">
+      <cpol-header></cpol-header>
+    </div>
+    <div class="w-full max-h-full bg-body relative">
+      <div
+        class="absolute bg-white rounded-xl left-0 right-0 mx-auto w-11/12 -top-24 shadow-lg p-10"
+      >
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

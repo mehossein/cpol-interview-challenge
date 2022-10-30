@@ -22,9 +22,9 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@core/*": ["src/app/core/*"],
-      "@auth/*": ["src/app/auth/*"],
       "@env/*": ["src/environments/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@shared/*": ["src/app/shared/*"],
+      "@auth/*": ["src/app/authentication/*"]
     }
   },
   "angularCompilerOptions": {

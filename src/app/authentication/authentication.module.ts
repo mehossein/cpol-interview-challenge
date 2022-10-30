@@ -25,10 +25,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
     // App
     AuthenticationRoutingModule,
-
-    // Third-Party
-    MatInputModule,
-    MatFormFieldModule,
   ],
   providers: [AuthApi],
 })

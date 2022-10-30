@@ -1,0 +1,66 @@
+<div class="h-52 w-full flex flex-col">
+  <ng-container *ngIf="!editMode; else editModeElseTemplate">
+    <h2 class="font-bold">اطلاعات پروفایل</h2>
+    <div class="flex h-20 mt-4">
+      <div class="w-1/3 flex-col border-l border-color relative">
+        <img
+          class="absolute -top-1 right-0"
+          src="assets/image/avatar.png"
+          alt="user_avatar"
+        />
+        <span class="h-1/2 flex-center table-key">نام </span>
+        <span class="h-1/2 flex-center table-value">{{
+          userData.first_name
+        }}</span>
+      </div>
+      <div class="w-1/3 flex-col border-l border-color">
+        <span class="h-1/2 flex-center table-key">نام خانوادگی </span>
+        <span class="h-1/2 flex-center table-value">{{
+          userData.last_name
+        }}</span>
+      </div>
+      <div class="w-1/3">
+        <span class="h-1/2 flex-center table-key">توضیحات </span>
+        <span class="h-1/2 flex-center table-value">{{ userData.bio }}</span>
+      </div>
+    </div>
+    <div class="border-t border-color mt-10 pt-10">
+      <button
+        (click)="changeToEditMode()"
+        class="edit-btn-bg w-40 h-12 rounded-xl shadow flex-center gap-2 edit-btn-text-color"
+      >
+        <mat-icon>edit</mat-icon>
+        <span>ویرایش اطلاعات</span>
+      </button>
+    </div>
+  </ng-container>
+  <ng-template #editModeElseTemplate>
+    <form action="">
+      <div class="w-full flex flex-col"></div>
+      <div class="w-full flex h-24 gap-4">
+        <div class="h-full flex flex-col w-1/3">
+          <label for=""></label>
+          <input type="text" formControlName="" name="" id="" />
+        </div>
+        <div class="h-full flex flex-col w-1/3">
+          <label for=""></label>
+          <input type="text" formControlName="" name="" id="" />
+        </div>
+        <div class="h-full flex flex-col w-1/3">
+          <label for=""></label>
+          <input type="text" formControlName="" name="" id="" />
+        </div>
+      </div>
+      <div class="w-full h-12 flex gap-5">
+        <button class="w-32 h-12 rounded-xl shadow text-white bg-save-btn">
+          ذخیره
+        </button>
+        <button
+          class="w-32 h-12 rounded-xl shadow edit-btn-text-color bg-cancel-btn"
+        >
+          انصراف
+        </button>
+      </div>
+    </form>
+  </ng-template>
+</div>

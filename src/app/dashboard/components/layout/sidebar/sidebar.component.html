@@ -1,0 +1,33 @@
+<div class="w-full h-full flex flex-col bg-sidebar">
+  <div class="h-28 flex-center gap-3">
+    <ng-container
+      *ngFor="
+        let item of getSidebarQuickActionItems;
+        trackBy: trackBySidebarItems
+      "
+    >
+      <a
+        class="bg-white quick-aciotn-icon-color rounded-full flex-center w-12 h-12"
+        [routerLink]="item.link"
+      >
+        <mat-icon>{{ item.icon }}</mat-icon>
+      </a>
+    </ng-container>
+  </div>
+  <div
+    class="w-full h-full flex flex-col gap-y-2 items-center px-5 mt-5 text-white"
+  >
+    <ng-container
+      *ngFor="let item of getSidebarMenuItems; trackBy: trackBySidebarItems"
+    >
+      <a
+        class="w-full rounded-lg bg-transparent p-2.5 pr-7 relative menu-link"
+        [routerLink]="item.link"
+        [routerLinkActive]="'bg-active-link'"
+        [routerLinkActiveOptions]="{ exact: item.exactOption }"
+      >
+        {{ item.title }}
+      </a>
+    </ng-container>
+  </div>
+</div>
