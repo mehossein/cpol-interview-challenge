@@ -1,0 +1,65 @@
+<div
+  class="h-full w-full flex flex-col p-10 md:p-10 lg:p-40 justify-center relative"
+>
+  <img
+    class="my-5 absolute top-5 right-[45%] md:static md:mb-11"
+    src="assets/image/logo.png"
+    alt="logo"
+    width="51"
+    height="51"
+  />
+  <h1 class="font-bold text-4xl mb-3">خوش آمدید</h1>
+  <p class="text-gray-500 mb-8 mt-3.5">ورود به حساب کاربری</p>
+  <form
+    class="w-full flex flex-col gap-y-4 border-b-2 border-gray-300 pb-9"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    autocomplete="off"
+  >
+    <div class="flex flex-col w-full gap-y-4">
+      <label>نام کاربری</label>
+      <input
+        class="w-full rounded px-2 border-gray-300 border-2"
+        type="text"
+        formControlName="username"
+        [readonly]="pending"
+        placeholder="نام کاربری"
+      />
+    </div>
+    <div class="flex flex-col w-full gap-y-4">
+      <label>رمز ورود</label>
+      <input
+        class="w-full rounded px-2 border-gray-300 border-2"
+        type="text"
+        formControlName="password"
+        [readonly]="pending"
+        placeholder="********"
+      />
+    </div>
+    <div class="w-full h-11 flex justify-between mt-3">
+      <button
+        [disabled]="pending"
+        type="submit"
+        class="w-1/3 h-full flex-center gap-x-2 rounded bg-blue-500 text-white min-w-fit"
+        [class.px-2]="pending"
+      >
+        <ng-container *ngIf="pending; else spinnerTemplate">
+          در حال دریافت اطلاعات <span class="loader !border-t-white"></span>
+        </ng-container>
+        <ng-template #spinnerTemplate>ورود</ng-template>
+      </button>
+      <p
+        class="w-1/3 flex justify-end items-center h-full text-blue-400 cursor-pointer"
+      >
+        فراموشی رمز عبور
+      </p>
+    </div>
+  </form>
+  <p class="w-full mt-5">
+    هنوز ثبت نام نکرده اید؟
+    <span class="text-blue-400 underline cursor-pointer"
+      >ایجاد حساب کاربری</span
+    >
+  </p>
+</div>
