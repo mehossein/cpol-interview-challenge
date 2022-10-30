@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // App
 import { BASE_URL } from '@shared/tokens';
+import { environment } from '@env/environment';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
 import { AlertService } from '@shared/services';
@@ -12,7 +13,6 @@ import { AppRoutingModule } from './app.routing';
 
 // Third-Party
 import { ToastrModule } from 'ngx-toastr';
-import { environment } from '@env/environment';
 
 @NgModule({
   declarations: [AppComponent],

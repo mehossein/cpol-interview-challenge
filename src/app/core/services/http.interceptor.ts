@@ -63,7 +63,7 @@ export class HttpsInterceptor implements HttpInterceptor {
         this._router.navigate(['auth/login']);
         return throwError(() => error);
       default:
-        this._alertSrv.error(error.error.message);
+        this._alertSrv.error(error.error.non_field_errors);
         return throwError(() => error);
     }
   }
